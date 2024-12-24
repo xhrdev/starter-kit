@@ -28,3 +28,9 @@ const { data } = await axios.request({
   url: 'https://app.gusto.com/login',
 });
 ```
+
+## Examples
+
+See our samples at our [GitHub repository](https://github.com/xhrdev/examples)
+
+For example, using the Apollo hidden API: <https://github.com/xhrdev/examples/blob/master/src/apollo.ts>
