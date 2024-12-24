@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@xhrdev/axios-example",
+  "version": "0.0.1",
+  "repository": "github:xhrdev/starter-kit.git",
+  "type": "module",
+  "scripts": {
+    "eslint": "eslint .",
+    "exec": "tsx",
+    "lint": "npm run eslint",
+    "tsx": "NODE_TLS_REJECT_UNAUTHORIZED=0 tsx"
+  },
+  "dependencies": {
+    "axios": "1.7.9",
+    "axios-cookiejar-support": "5.0.5",
+    "tough-cookie": "5.0.0",
+    "http-cookie-agent": "6.0.8",
+    "https-proxy-agent": "7.0.6"
+  },
+  "devDependencies": {
+    "@skilbjo/config-rc": "1.0.20",
+    "@skilbjo/eslint-config-rc": "npm:@skilbjo/config-rc@1.0.20",
+    "@tsconfig/node22": "22.0.0",
+    "@types/node": "22.10.2",
+    "@typescript-eslint/eslint-plugin": "7.6.0",
+    "@typescript-eslint/parser": "7.6.0",
+    "cheerio": "1.0.0",
+    "eslint": "8.57.0",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
+  }
+}
