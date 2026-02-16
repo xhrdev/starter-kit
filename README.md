@@ -15,18 +15,27 @@ Integrate in one line:
 
 ```typescript
 import axios from 'axios';
-import HttpsProxyAgent from 'https-proxy-agent';
+import { readFileSync } from 'node:fs';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 
-const axios = require('axios');
-const { HttpsProxyAgent } = require('https-proxy-agent');
+const ca = readFileSync('./xhrdev.pem');
+const httpsAgent = new HttpsProxyAgent('https://magic.xhr.dev');
+httpsAgent.options.ca = ca;
 
 const { data } = await axios.request({
   headers: {
     'x-xhr-api-key': process.env.XHR_API_KEY,
   },
-  httpsAgent: new HttpsProxyAgent('https://proxy.prod.engineering.xhr.dev'),
+  httpsAgent,
   url: 'https://app.gusto.com/login',
 });
+```
+
+`xhrdev.pem` is committed in this repo for certificate verification.
+You can also download the latest certificate directly:
+
+```bash
+curl -s https://docs.xhr.dev/xhrdev.pem -o xhrdev.pem
 ```
 
 ## Examples
